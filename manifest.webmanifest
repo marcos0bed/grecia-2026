@@ -1,0 +1,17 @@
+{
+  "name": "Grecia 2026 · Viaje familiar",
+  "short_name": "Grecia 2026",
+  "description": "Itinerario, vuelos, hoteles y guía del viaje familiar a Grecia · 11–20 julio 2026",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0d2f57",
+  "theme_color": "#0d2f57",
+  "lang": "es",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
