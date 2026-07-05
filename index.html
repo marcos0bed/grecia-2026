@@ -406,8 +406,8 @@ const UI = {
   secDJs: B("🎧 Semana de DJs (solo papás 😎)","🎧 DJ week (parents only 😎)"),
   alertaTitulo: B("⚠️ Día 20 · conexión ajustada en Atenas (2 h 25)","⚠️ Day 20 · tight connection in Athens (2 h 25)"),
   alertaTexto: B(
-    "Mykonos→Atenas (Aegean) y Atenas→Madrid (Iberia) son <b>billetes separados de alianzas distintas</b>: si perdemos el enlace, nadie nos reubica. Ese día: <b>solo equipaje de mano</b>, ligeros, y sin despistes en el aeropuerto.",
-    "Mykonos→Athens (Aegean) and Athens→Madrid (Iberia) are <b>separate tickets on different alliances</b>: if we miss the link, nobody rebooks us. That day: <b>hand luggage only</b>, travel light, zero distractions at the airport."),
+    "Mykonos→Atenas (Aegean) y Atenas→Madrid (Iberia) son <b>billetes separados de alianzas distintas</b>: si perdemos el enlace, nadie nos reubica, y la <b>maleta facturada NO va conectada</b>. Ese día: aterrizamos 18:25 → recoger la maleta de la cinta (~19:00) → <b>refacturarla en Iberia</b> (bag drop cierra ~20:05) → seguridad → embarque. <b>Check-in online de IB836 hecho LA VÍSPERA</b>, uno recoge la maleta mientras el resto adelanta, y cero despistes.",
+    "Mykonos→Athens (Aegean) and Athens→Madrid (Iberia) are <b>separate tickets on different alliances</b>: if we miss the link nobody rebooks us, and the <b>checked suitcase is NOT through-checked</b>. That day: land 18:25 → collect the bag from the belt (~19:00) → <b>re-check it with Iberia</b> (bag drop closes ~20:05) → security → boarding. <b>IB836 online check-in done THE DAY BEFORE</b>, one person grabs the bag while the rest go ahead, zero distractions."),
   pie: B(
     "Ὁ βίος βραχύς, ἡ δὲ τέχνη μακρή · «La vida es breve, el arte eterno»<br>Hecho con ❤️ para el viaje familiar · julio 2026",
     "Ὁ βίος βραχύς, ἡ δὲ τέχνη μακρή · “Life is short, art is long”<br>Made with ❤️ for the family trip · July 2026"),
@@ -496,7 +496,7 @@ const DIAS = [
   { d:20, sem:B("LUN","MON"), emoji:"🛫", titulo:B("Vuelta a casa","Homeward bound"), pill:"warn", items:[
     B("Playa hasta las 13:30 → ducha y cierre de maletas","Beach until 13:30 → shower and pack up"),
     B("15:40 pickup → JMK → A3379 17:45 → ATH 18:25","15:40 pickup → JMK → A3379 17:45 → ATH 18:25"),
-    B("⚠️ CONEXIÓN 2h25 — solo equipaje de mano, cero despistes","⚠️ 2h25 CONNECTION — hand luggage only, zero distractions"),
+    B("⚠️ CONEXIÓN 2h25 — recoger la maleta de la cinta y REFACTURAR en Iberia (check-in online hecho la víspera)","⚠️ 2h25 CONNECTION — collect the suitcase from the belt and RE-CHECK it with Iberia (online check-in done the day before)"),
     B("IB836 · ATH 20:50 → MAD 23:45 · ¡a casa con mil fotos!","IB836 · ATH 20:50 → MAD 23:45 · home with a thousand photos!"),
   ]},
 ];
@@ -616,6 +616,10 @@ const CHECKLIST = [
    B("El shuttle del hotel NO opera a las 00:30 (confirmado) · en julio los transfers se agotan","The hotel shuttle does NOT run at 00:30 (confirmed) · transfers sell out in July")],
   [B("🎧 Reservar Scorpios — WhoMadeWho, vie 17 (2 pax, ~150 €/pp)","🎧 Book Scorpios — WhoMadeWho, Fri 17 (2 pax, ~€150 pp)"),
    B("WhatsApp +30 694 573 2699 · preguntar también el sáb 18 (&ME) para comparar","WhatsApp +30 694 573 2699 · ask about Sat 18 (&ME) too, to compare")],
+  [B("🧳 Verificar que la maleta facturada está incluida en los 5 vuelos","🧳 Check the suitcase is included on all 5 flights"),
+   B("Iberia i/v + GQ216 (SKY) + A3321/A3384 + A3379 (Aegean/Trip.com) — si no, pagarla online: mucho más barato que en mostrador","Iberia rtn + GQ216 (SKY) + A3321/A3384 + A3379 (Aegean/Trip.com) — if not, pay online: far cheaper than at the counter")],
+  [B("📲 Día 19: check-in online de IB836 (vuelo del día 20)","📲 Day 19: online check-in for IB836 (the flight home)"),
+   B("Clave para la conexión de 2h25: en Atenas solo soltar la maleta, no gestionar billetes","Key for the 2h25 connection: in Athens just drop the bag, no ticket desk")],
 ];
 
 const MALETA = [
