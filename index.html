@@ -327,6 +327,8 @@
     <div class="alerta" id="alerta20"></div>
     <h2 class="sec" id="sec-hoteles"></h2>
     <div id="hoteles"></div>
+    <h2 class="sec" id="sec-traslados"></h2>
+    <div id="traslados"></div>
   </section>
 
   <!-- ============ TAB DESTINOS ============ -->
@@ -385,6 +387,7 @@ const UI = {
   secDias: B("Día a día","Day by day"),
   secVuelos: B("✈️ Vuelos","✈️ Flights"),
   secHoteles: B("🏨 Hoteles","🏨 Hotels"),
+  secTraslados: B("🚕 Traslados aeropuerto ⇄ hotel","🚕 Airport ⇄ hotel transfers"),
   secAntes: B("✅ Antes de salir","✅ Before we leave"),
   secMaleta: B("🧳 Maleta (marca lo tuyo)","🧳 Packing list (tick yours)"),
   secFrases: B("🗣️ Griego de supervivencia","🗣️ Survival Greek"),
@@ -543,6 +546,47 @@ const HOTELES = [
     mapa:"https://maps.apple.com/?q=Casa+Grande+Hotel+Platis+Gialos+Mykonos" },
 ];
 
+const TRASLADOS = [
+  { emoji:"🚇", warn:false,
+    fecha:B("Sáb 11 jul · al aterrizar (~12:30)","Sat, Jul 11 · after landing (~12:30)"),
+    ruta:B("Aeropuerto ATH → Central Stay (Monastiraki)","ATH airport → Central Stay (Monastiraki)"),
+    plan:B("Metro Línea 3 dirección Nikea, directo a Monastiraki (cada 30 min). OJO: billete especial de aeropuerto — el urbano de 1,20 € NO vale. En el andén pasan también trenes suburbanos: subid solo al METRO.",
+           "Metro Line 3 towards Nikea, direct to Monastiraki (every 30 min). NOTE: special airport ticket — the regular €1.20 one is NOT valid. Suburban trains share the platform: board the METRO only."),
+    coste:B("31,50 € los 4 (9 € adulto · 4,50 € Montse, con DNI) · i/v 16 €/adulto","€31.50 for all 4 (€9 adult · €4.50 Montse, ID needed) · return €16/adult"),
+    dur:"~40 min" },
+  { emoji:"🚇", warn:false,
+    fecha:B("Lun 13 jul · 18:45","Mon, Jul 13 · 18:45"),
+    ruta:B("Monastiraki → Aeropuerto ATH","Monastiraki → ATH airport"),
+    plan:B("Metro L3 desde Monastiraki: salidas 18:15 / 18:45 / 19:15. Saliendo a las 18:45 llegáis 19:25 — vuelo a las 21:15 con margen. Mejor que taxi: en hora punta el coche puede tardar 80 min.",
+           "Metro L3 from Monastiraki: departures 18:15 / 18:45 / 19:15. The 18:45 train arrives 19:25 — plenty for the 21:15 flight. Better than a taxi: rush-hour traffic can take 80 min."),
+    coste:B("incluido en la ida y vuelta","included in the return ticket"),
+    dur:"~40 min" },
+  { emoji:"🚕", warn:false,
+    fecha:B("Lun 13 jul · 22:05","Mon, Jul 13 · 22:05"),
+    ruta:B("Aeropuerto HER → Capsis Astoria (5 km)","HER airport → Capsis Astoria (5 km)"),
+    plan:B("Taxi de la parada de llegadas (en julio hay coches coordinados con los vuelos; tarifa diurna hasta las 00:00). Plan B: bus urbano línea 12 (1,60 €/pax, hasta 00:30, sin sitio para maletas).",
+           "Taxi from the arrivals rank (in July cars are matched to flights; day tariff until 00:00). Plan B: city bus line 12 (€1.60 pp, runs until 00:30, no luggage space)."),
+    coste:"~15-25 €", dur:"10-15 min" },
+  { emoji:"🚕", warn:false,
+    fecha:B("Jue 16 jul · ~19:45","Thu, Jul 16 · ~19:45"),
+    ruta:B("Capsis Astoria → Aeropuerto HER","Capsis Astoria → HER airport"),
+    plan:B("Pedid el taxi en recepción (o parada en la propia Plateia Eleftherias). Vuelo a las 21:55 — saliendo a las 19:45 sobra margen.",
+           "Ask reception to call a taxi (or use the rank on Plateia Eleftherias itself). Flight at 21:55 — leaving at 19:45 gives plenty of margin."),
+    coste:"~15-25 €", dur:"10-15 min" },
+  { emoji:"🚖", warn:true,
+    fecha:B("Vie 17 jul · 00:30","Fri, Jul 17 · 00:30"),
+    ruta:B("Aeropuerto JMK → Casa Grande (Platis Gialos)","JMK airport → Casa Grande (Platis Gialos)"),
+    plan:B("PRE-RESERVADO obligatorio: Mykonos tiene ~30 taxis para toda la isla y de madrugada no son fiables. Plan A: pickup del hotel (pedido). Plan B: transfer privado a precio cerrado (Suntransfers / Welcome Pickups, ~40 €) — el conductor monitoriza el vuelo A3384 y espera aunque se retrase.",
+           "MUST be pre-booked: Mykonos has ~30 taxis for the whole island and they're unreliable in the small hours. Plan A: hotel pickup (requested). Plan B: fixed-price private transfer (Suntransfers / Welcome Pickups, ~€40) — the driver tracks flight A3384 and waits even if it's delayed."),
+    coste:B("0-45 € según pickup/transfer","€0-45 depending on pickup/transfer"), dur:"8-10 min" },
+  { emoji:"🚖", warn:false,
+    fecha:B("Lun 20 jul · 15:40","Mon, Jul 20 · 15:40"),
+    ruta:B("Casa Grande → Aeropuerto JMK","Casa Grande → JMK airport"),
+    plan:B("Recogida reservada en el hotel a las 15:40 (vuelo 17:45). Reconfirmar por WhatsApp la víspera. Nada de bus: obliga a transbordar en Fabrika con las maletas.",
+           "Booked pickup at the hotel at 15:40 (flight 17:45). Reconfirm by WhatsApp the day before. Skip the bus: it forces a luggage change at Fabrika."),
+    coste:B("0-45 €","€0-45"), dur:"8-10 min" },
+];
+
 const CHECKLIST = [
   [B("Enviar a Central Stay copias de DNI/pasaporte de los 4 + «llegamos en IB841 a las 11:45, vamos en metro»","Email Central Stay the ID/passport copies + “landing on IB841 at 11:45, coming by metro”"),
    B("Necesario para recibir los códigos de acceso (no hay recepción)","Needed to receive the access codes (there is no front desk)")],
@@ -560,6 +604,8 @@ const CHECKLIST = [
   [B("Descargar mapas offline de Atenas, Heraklion y Mykonos","Download offline maps of Athens, Heraklion and Mykonos"),
    B("Google Maps → zona → Descargar","Google Maps → area → Download")],
   [B("Activar avisos de los 6 vuelos en la app de Iberia/Aegean/Trip","Turn on alerts for all 6 flights in the Iberia/Aegean/Trip apps"), ""],
+  [B("Confirmar pickup nocturno con Casa Grande o reservar transfer JMK (~40 €)","Confirm the night pickup with Casa Grande or book a JMK transfer (~€40)"),
+   B("En julio los transfers de Mykonos se agotan — no dejarlo para el final","Mykonos transfers sell out in July — don't leave it late")],
 ];
 
 const MALETA = [
@@ -900,8 +946,8 @@ function renderAll(){
   tickCountdown();
 
   const secs = { 'sec-etapas':UI.secEtapas, 'sec-familia':UI.secFamilia, 'sec-dias':UI.secDias,
-    'sec-vuelos':UI.secVuelos, 'sec-hoteles':UI.secHoteles, 'sec-antes':UI.secAntes,
-    'sec-maleta':UI.secMaleta, 'sec-frases':UI.secFrases, 'sec-sos':UI.secSOS };
+    'sec-vuelos':UI.secVuelos, 'sec-hoteles':UI.secHoteles, 'sec-traslados':UI.secTraslados,
+    'sec-antes':UI.secAntes, 'sec-maleta':UI.secMaleta, 'sec-frases':UI.secFrases, 'sec-sos':UI.secSOS };
   for (const [id, v] of Object.entries(secs)) document.getElementById(id).textContent = t(v);
 
   const tabs = { 'tl-inicio':UI.tabInicio, 'tl-dias':UI.tabDias, 'tl-reservas':UI.tabReservas,
@@ -953,6 +999,14 @@ function renderAll(){
       <div class="dir">${esc(t(h.zona))} · ${t(h.fechas)} · <a href="${h.mapa}" target="_blank">${t(UI.verMapa)}</a></div>
       <div class="datos">${h.datos.map(d=>`<div><b>${esc(t(d[0]))}:</b> ${esc(t(d[1]))}</div>`).join('')}</div>
       <div class="accion">${t(h.accion)}</div>
+    </div>`).join('');
+
+  document.getElementById('traslados').innerHTML = TRASLADOS.map(x=>`
+    <div class="card">
+      <div class="muted" style="margin-bottom:6px">${t(x.fecha)}</div>
+      <div style="font-weight:700; display:flex; align-items:center; gap:8px; flex-wrap:wrap">${x.emoji} ${esc(t(x.ruta))}${x.warn?' <span class="pill warn">'+(lang==='es'?'⚠️ pre-reservar':'⚠️ pre-book')+'</span>':''}</div>
+      <p style="font-size:.85rem; margin-top:6px">${esc(t(x.plan))}</p>
+      <div class="vmeta"><span>💶 ${esc(t(x.coste))}</span><span>⏱ ${esc(t(x.dur))}</span></div>
     </div>`).join('');
 
   renderChecks('checklist', CHECKLIST, 'grecia26-chk');
