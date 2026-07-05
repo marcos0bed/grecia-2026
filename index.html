@@ -86,8 +86,14 @@
   header.hero .ruta { font-size:.85rem; margin-top:8px; opacity:.85; letter-spacing:.03em; position:relative; }
 
   .lang-toggle {
-    display:flex; justify-content:flex-end; gap:4px;
+    display:flex; justify-content:space-between; align-items:center; gap:4px;
     position:relative; z-index:3; margin:-10px -6px 8px 0;
+  }
+  .ver-btn {
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace !important; font-size:.62rem !important;
+    color:rgba(255,255,255,.75) !important; background:rgba(255,255,255,.10) !important;
+    border:1px solid rgba(255,255,255,.25) !important; font-weight:400 !important;
+    letter-spacing:.04em !important; padding:4px 10px !important;
   }
   .lang-toggle button {
     border:1px solid rgba(255,255,255,.35); padding:5px 12px; border-radius:99px; cursor:pointer;
@@ -306,6 +312,7 @@
 
 <header class="hero">
   <div class="lang-toggle">
+    <button id="ver-btn" class="ver-btn" onclick="forceUpdate(this)" aria-label="Versión — toca para actualizar"></button>
     <button id="lang-btn" onclick="toggleLang()"></button>
   </div>
   <h1>🇬🇷 GRECIA 2026</h1>
@@ -389,6 +396,16 @@
 </nav>
 
 <script>
+const APP_VERSION = "v-bf204924 · 05 Jul 20:51";
+
+function forceUpdate(b){
+  b.textContent = '…';
+  Promise.resolve()
+    .then(() => (window.caches && caches.keys) ? caches.keys().then(ks => Promise.all(ks.map(k => caches.delete(k)))) : null)
+    .then(() => navigator.serviceWorker ? navigator.serviceWorker.getRegistrations().then(rs => Promise.all(rs.map(r => r.unregister()))) : null)
+    .then(() => location.reload(), () => location.reload());
+}
+
 /* ================== i18n ================== */
 let lang = localStorage.getItem('grecia26-lang') || 'es';
 const B = (es, en) => ({es, en});
@@ -1036,6 +1053,7 @@ function playYT(box, id){
 
 function renderAll(){
   document.documentElement.lang = lang;
+  document.getElementById('ver-btn').textContent = APP_VERSION;
   document.getElementById('lang-btn').innerHTML = lang==='es'
     ? '<span class="fl">🇪🇸</span>ES'
     : '<span class="fl">🇬🇧</span>EN';
