@@ -1,4 +1,4 @@
-const CACHE = 'grecia26-03b0d932';
+const CACHE = 'grecia26-c74921ab';
 const ASSETS = ['./', './index.html', './manifest.webmanifest',
                 './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
