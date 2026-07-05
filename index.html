@@ -403,6 +403,7 @@ const UI = {
   secHacer: B("⭐ Qué hacer","⭐ Things to do"),
   secComer: B("🍽️ Para comer","🍽️ Food"),
   secEnlaces: B("🔗 Enlaces útiles","🔗 Useful links"),
+  secDJs: B("🎧 Semana de DJs (solo papás 😎)","🎧 DJ week (parents only 😎)"),
   alertaTitulo: B("⚠️ Día 20 · conexión ajustada en Atenas (2 h 25)","⚠️ Day 20 · tight connection in Athens (2 h 25)"),
   alertaTexto: B(
     "Mykonos→Atenas (Aegean) y Atenas→Madrid (Iberia) son <b>billetes separados de alianzas distintas</b>: si perdemos el enlace, nadie nos reubica. Ese día: <b>solo equipaje de mano</b>, ligeros, y sin despistes en el aeropuerto.",
@@ -613,6 +614,8 @@ const CHECKLIST = [
   [B("Activar avisos de los 6 vuelos en la app de Iberia/Aegean/Trip","Turn on alerts for all 6 flights in the Iberia/Aegean/Trip apps"), ""],
   [B("Confirmar pickup nocturno con Casa Grande o reservar transfer JMK (~40 €)","Confirm the night pickup with Casa Grande or book a JMK transfer (~€40)"),
    B("En julio los transfers de Mykonos se agotan — no dejarlo para el final","Mykonos transfers sell out in July — don't leave it late")],
+  [B("🎧 Reservar Scorpios — WhoMadeWho, vie 17 (2 pax, ~150 €/pp)","🎧 Book Scorpios — WhoMadeWho, Fri 17 (2 pax, ~€150 pp)"),
+   B("WhatsApp +30 694 573 2699 · preguntar también el sáb 18 (&ME) para comparar","WhatsApp +30 694 573 2699 · ask about Sat 18 (&ME) too, to compare")],
 ];
 
 const MALETA = [
@@ -826,6 +829,19 @@ const DESTINOS = {
       {titulo:B("Guía completa Mykonos 2026 (Santorini Dave)","Complete Mykonos guide 2026 (Santorini Dave)"), url:"https://santorinidave.com/mykonos"},
       {titulo:B("Visitar Delos — barcos y consejos","Visiting Delos — boats & tips"), url:"https://archaeology-travel.com/greece/visiting-delos-island/"}
     ],
+    djs: {
+      nota: B("Confirmado en las webs oficiales (scorpios.com · cavoparadiso.gr). Scorpios está en Paraga, a 10-15 min A PIE del hotel; en Cavo el cabeza de cartel sale a las 2-4 AM. Las chicas se quedan en el hotel.",
+              "Confirmed on the official sites (scorpios.com · cavoparadiso.gr). Scorpios is in Paraga, a 10-15 min WALK from the hotel; at Cavo the headliner goes on at 2-4 AM. The girls stay at the hotel."),
+      eventos: [
+        {fecha:B("Vie 17","Fri 17"), artista:"WhoMadeWho (Live) + Lannka", club:B("Scorpios · sunset 17-24h","Scorpios · sunset 5pm-12am"), plan:B("⭐ ELEGIDO — reservar (~150 €/pp) · WhatsApp +30 694 573 2699","⭐ CHOSEN — book it (~€150 pp) · WhatsApp +30 694 573 2699"), destacado:true},
+        {fecha:B("Vie 17","Fri 17"), artista:"John Summit", club:"Cavo Paradiso", plan:B("~150 € entrada · cavoparadiso.gr","~€150 entry · cavoparadiso.gr"), destacado:false},
+        {fecha:B("Sáb 18","Sat 18"), artista:"&ME (Keinemusik) & Valeron", club:B("Scorpios · sunset","Scorpios · sunset"), plan:B("LA fecha de la semana — las mesas vuelan","THE date of the week — tables go fast"), destacado:false},
+        {fecha:B("Sáb 18","Sat 18"), artista:"Benny Benassi", club:"Cavo Paradiso", plan:B("entrada en cavoparadiso.gr","entry at cavoparadiso.gr"), destacado:false},
+        {fecha:B("Dom 19","Sun 19"), artista:"PAWSA", club:B("Scorpios · ritual dominical","Scorpios · Sunday ritual"), plan:B("el ritual insignia de la casa","the house's flagship ritual"), destacado:false},
+        {fecha:B("Dom 19","Sun 19"), artista:"Armand Van Helden — Ministry of Sound 35", club:"Cavo Paradiso", plan:B("house clásico · headliner 2-4 AM","classic house · headliner 2-4 AM"), destacado:false},
+        {fecha:B("Fuera por vuelos 😭","Missed by flights 😭"), artista:"Dixon (jue 16, Scorpios) · Black Coffee (lun 20, SantAnna)", club:"", plan:B("llegamos / volamos justo esos días","we arrive / fly out exactly those days"), destacado:false},
+      ]
+    },
     frase_dia: B("En la antigüedad estaba prohibido nacer y morir en Delos: embarazadas y moribundos eran trasladados a la isla vecina de Rinia, para que nadie pudiera reclamar la isla sagrada de Apolo por derecho de nacimiento.","In antiquity it was forbidden to be born or to die on Delos: expectant mothers and the dying were ferried to neighbouring Rineia, so that no one could claim Apollo's sacred island by birthright.")
   }
 };
@@ -925,6 +941,16 @@ function renderDest(key){
   if(d.comida && d.comida.length){
     html += '<h2 class="sec">'+t(UI.secComer)+'</h2><div class="card">';
     html += d.comida.map(c=>`<div class="atr"><div class="n">🥘</div><div><b>${esc(t(c.nombre))}</b><p>${esc(t(c.nota))}</p></div></div>`).join('');
+    html += '</div>';
+  }
+  if(d.djs){
+    html += '<h2 class="sec">'+t(UI.secDJs)+'</h2><div class="card">';
+    html += '<p class="muted" style="margin-bottom:6px">'+esc(t(d.djs.nota))+'</p>';
+    html += d.djs.eventos.map(e=>`
+      <div class="atr"><div class="n">${e.destacado?'⭐':'🎧'}</div><div>
+        <b>${esc(e.artista)}</b>${e.club?' · <span class="muted">'+esc(t(e.club))+'</span>':''}
+        <p><b style="color:var(--aegean-light)">${esc(t(e.fecha))}</b> — ${esc(t(e.plan))}</p>
+      </div></div>`).join('');
     html += '</div>';
   }
   if(d.enlaces && d.enlaces.length){
