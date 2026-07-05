@@ -90,11 +90,12 @@
     position:relative; z-index:3; margin:-10px -6px 8px 0;
   }
   .lang-toggle button {
-    border:none; padding:5px 11px; border-radius:99px; cursor:pointer;
+    border:1px solid rgba(255,255,255,.35); padding:5px 12px; border-radius:99px; cursor:pointer;
     background:rgba(255,255,255,.16); color:#fff; font-family:inherit;
-    font-size:.72rem; font-weight:700; letter-spacing:.04em;
+    font-size:.78rem; font-weight:700; letter-spacing:.04em;
+    display:flex; align-items:center; gap:6px;
   }
-  .lang-toggle button.active { background:#fff; color:var(--aegean-deep); }
+  .lang-toggle button .fl { font-size:1rem; line-height:1; }
 
   #countdown {
     display:flex; justify-content:center; gap:10px; margin-top:14px; position:relative;
@@ -292,8 +293,7 @@
 
 <header class="hero">
   <div class="lang-toggle">
-    <button id="btn-es" onclick="setLang('es')">ES</button>
-    <button id="btn-en" onclick="setLang('en')">EN</button>
+    <button id="lang-btn" onclick="toggleLang()"></button>
   </div>
   <h1>🇬🇷 GRECIA 2026</h1>
   <div class="sub" id="hero-sub"></div>
@@ -891,8 +891,9 @@ function playYT(box, id){
 
 function renderAll(){
   document.documentElement.lang = lang;
-  document.getElementById('btn-es').classList.toggle('active', lang==='es');
-  document.getElementById('btn-en').classList.toggle('active', lang==='en');
+  document.getElementById('lang-btn').innerHTML = lang==='es'
+    ? '<span class="fl">🇪🇸</span>ES'
+    : '<span class="fl">🇬🇧</span>EN';
 
   document.getElementById('hero-sub').textContent = t(UI.heroSub);
   document.getElementById('hero-ruta').textContent = t(UI.heroRuta);
@@ -968,6 +969,8 @@ function renderAll(){
 
   document.getElementById('pie').innerHTML = t(UI.pie);
 }
+
+function toggleLang(){ setLang(lang === 'es' ? 'en' : 'es'); }
 
 function setLang(l){
   lang = l;
