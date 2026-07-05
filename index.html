@@ -435,61 +435,68 @@ const FAMILIA = [
 ];
 
 const DIAS = [
-  { d:11, sem:B("SÁB","SAT"), emoji:"🛫", titulo:B("Madrid → Atenas","Madrid → Athens"), pill:"vuelo", items:[
-    B("IB841 directo · MAD 07:00 → ATH 11:45 (¡madrugón!)","IB841 non-stop · MAD 07:00 → ATH 11:45 (early wake-up!)"),
-    B("Metro Línea 3 directo del aeropuerto a Monastiraki (~40 min)","Metro Line 3 straight from the airport to Monastiraki (~40 min)"),
-    B("Check-in Central Stay Athens (acceso con códigos, sin recepción)","Check-in Central Stay Athens (code access, no front desk)"),
-    B("Tarde: primer paseo por Monastiraki y Plaka + primera cena griega","Afternoon: first stroll around Monastiraki & Plaka + first Greek dinner"),
+  { d:11, sem:B("SÁB","SAT"), emoji:"🛫", titulo:B("Madrid → Atenas · toma de contacto","Madrid → Athens · first taste"), pill:"vuelo", items:[
+    B("IB841 · MAD 07:00 → ATH 11:45 → metro L3 → 13:15 check-in (códigos)","IB841 · MAD 07:00 → ATH 11:45 → Metro L3 → 13:15 check-in (codes)"),
+    B("14:00 souvlaki en O Thanasis (al lado del apartamento)","14:00 souvlaki at O Thanasis (next to the apartment)"),
+    B("16:00 Templo de Zeus + Arco de Adriano → Jardín Nacional → 17:00 mini cambio de guardia en Síntagma","16:00 Temple of Zeus + Hadrian's Arch → National Garden → 17:00 mini changing of the guard at Syntagma"),
+    B("Vuelta por Ermou (compras) → 19:30 Plaka y Anafiotika ya sin calor","Back along Ermou (shopping) → 19:30 Plaka & Anafiotika once it cools"),
+    B("20:30 atardecer en el Areópago → 21:15 cena en las escalinatas de Mnisikleous","20:30 sunset from the Areopagus → 21:15 dinner on the Mnisikleous steps"),
   ]},
-  { d:12, sem:B("DOM","SUN"), emoji:"🏛️", titulo:B("Atenas a fondo","Athens in depth"), pill:"atenas", items:[
-    B("Acrópolis y Partenón A PRIMERA HORA (8:00) — menos calor y menos gente","Acropolis & Parthenon FIRST THING (8:00) — less heat, fewer crowds"),
-    B("Ágora Antigua y templo de Hefesto","Ancient Agora and the Temple of Hephaestus"),
-    B("Comida y paseo por Plaka","Lunch and a wander through Plaka"),
-    B("Atardecer desde la colina Filopappou o el Areópago (vistas a la Acrópolis)","Sunset from Philopappos Hill or the Areopagus (Acropolis views)"),
+  { d:12, sem:B("DOM","SUN"), emoji:"🏛️", titulo:B("EL día grande de Atenas","Athens: THE big day"), pill:"atenas", items:[
+    B("08:00 Acrópolis (2 h) — bajar por la ladera sur (teatro de Dioniso incluido)","08:00 Acropolis (2 h) — exit via the south slope (Theatre of Dionysus included)"),
+    B("11:00 GRAN ceremonia de los évzones en Síntagma (solo domingos · llegar 10:40)","11:00 GRAND Evzones ceremony at Syntagma (Sundays only · arrive 10:40)"),
+    B("12:00 Museo de la Acrópolis — 2 h de aire acondicionado + café con vistas","12:00 Acropolis Museum — 2 h of AC + café with a view"),
+    B("14:30 comida en Plaka → siesta opcional","14:30 lunch in Plaka → optional siesta"),
+    B("17:00 Ágora Antigua (sombra · cierra 20:00) + mercadillo de Monastiraki","17:00 Ancient Agora (shade · closes 20:00) + Monastiraki flea market"),
+    B("19:45 subir a Filopappou → atardecer 20:40 frente a la Acrópolis: LA foto","19:45 up Philopappos → 20:40 sunset facing the Acropolis: THE photo"),
+    B("21:30 cena en Psiri","21:30 dinner in Psiri"),
   ]},
-  { d:13, sem:B("LUN","MON"), emoji:"🛬", titulo:B("Atenas → Creta","Athens → Crete"), pill:"vuelo", items:[
-    B("Mañana libre — maletas guardadas gratis en el hotel","Free morning — luggage stored for free at the hotel"),
-    B("Ideas: cambio de guardia en Síntagma (en punto de cada hora), mercado central, barrio de Psiri","Ideas: changing of the guard at Syntagma (on the hour), central market, Psiri quarter"),
-    B("GQ216 (SKY express) · ATH 21:15 → Heraklion 22:05","GQ216 (SKY express) · ATH 21:15 → Heraklion 22:05"),
-    B("Check-in Capsis Astoria (frente al Museo Arqueológico)","Check-in Capsis Astoria (opposite the Archaeological Museum)"),
+  { d:13, sem:B("LUN","MON"), emoji:"🛬", titulo:B("Mañana ateniense → Creta","Athens morning → Crete"), pill:"vuelo", items:[
+    B("9:30 Kerameikos (entra en el combo) o compras tranquilas","9:30 Kerameikos (in the combo ticket) or easy shopping"),
+    B("11:00 Mercado Central Varvakios + barrio de Psiri","11:00 Varvakios Central Market + Psiri quarter"),
+    B("13:00 comida · alternativa: Museo Arqueológico Nacional (los lunes abre a las 13:00)","13:00 lunch · alternative: National Archaeological Museum (opens 13:00 on Mondays)"),
+    B("17:30 recoger maletas → 18:45 metro L3 → 19:25 aeropuerto","17:30 pick up luggage → 18:45 Metro L3 → 19:25 airport"),
+    B("GQ216 · ATH 21:15 → Heraklion 22:05 → taxi (10 min) → Capsis","GQ216 · ATH 21:15 → Heraklion 22:05 → taxi (10 min) → Capsis"),
   ]},
   { d:14, sem:B("MAR","TUE"), emoji:"🏺", titulo:B("Knossos y minoicos","Knossos & the Minoans"), pill:"creta", items:[
-    B("Palacio de Knossos por la mañana (bus urbano nº 2 o taxi, 15 min)","Knossos Palace in the morning (city bus #2 or taxi, 15 min)"),
-    B("Museo Arqueológico de Heraklion — está enfrente del hotel","Heraklion Archaeological Museum — right across from the hotel"),
-    B("Tarde: piscina en la azotea del hotel con vistas","Afternoon: rooftop pool with views"),
-    B("Cena por el centro de Heraklion","Dinner in central Heraklion"),
+    B("Desayuno tranquilo → 9:30 Knossos (bus nº 2 o taxi, 15 min · 2 h de visita)","Easy breakfast → 9:30 Knossos (bus #2 or taxi, 15 min · 2 h visit)"),
+    B("12:30 comida junto a la fuente de los Leones + bougatsa de postre","12:30 lunch by the Lions Fountain + bougatsa for dessert"),
+    B("15:00 Museo Arqueológico con AC (enfrente del hotel · combinada con Knossos)","15:00 Archaeological Museum with AC (across the street · combo with Knossos)"),
+    B("17:30 piscina de la azotea 🍹","17:30 rooftop pool 🍹"),
+    B("20:00 puerto veneciano + Koules al atardecer → cena en Korai","20:00 Venetian harbour + Koules at sunset → dinner on Korai"),
   ]},
-  { d:15, sem:B("MIÉ","WED"), emoji:"🏖️", titulo:B("Playa o casco histórico","Beach or old town"), pill:"creta", items:[
-    B("Opción A: excursión a Matala (~1 h) — playa con cuevas hippies","Option A: day trip to Matala (~1 h) — beach with hippie caves"),
-    B("Opción B: día tranquilo — fortaleza de Koules, puerto veneciano, calle 25 de Agosto","Option B: easy day — Koules fortress, Venetian harbour, 25 August street"),
-    B("Elafonisi y Balos quedan a 2,5–3 h → descartadas, las playas top son en Mykonos","Elafonisi & Balos are 2.5–3 h away → skipped; the top beaches come in Mykonos"),
+  { d:15, sem:B("MIÉ","WED"), emoji:"🏖️", titulo:B("Día de mar (A o B)","Sea day (A or B)"), pill:"creta", items:[
+    B("Plan A (recomendado): mañana playa de Ammoudara (bus 15-20 min) → tarde CretAquarium con AC","Plan A (recommended): morning at Ammoudara beach (bus 15-20 min) → afternoon CretAquarium with AC"),
+    B("Plan B (mítico): excursión a Matala — cuevas hippies (~2 h de bus por trayecto)","Plan B (legendary): Matala day trip — hippie caves (~2 h bus each way)"),
+    B("Al fresco: Museo de Historia Natural (simulador de terremotos)","In the cool evening: Natural History Museum (earthquake simulator)"),
+    B("Cena por el centro","Dinner in the old town"),
   ]},
-  { d:16, sem:B("JUE","THU"), emoji:"🌙", titulo:B("Creta → Mykonos (nocturno)","Crete → Mykonos (night hop)"), pill:"vuelo", items:[
-    B("Día COMPLETO en Creta — pedir late check-out en el Capsis","FULL day in Crete — ask the Capsis for a late check-out"),
-    B("A3321 (Aegean) · HER 21:55 → ATH · escala 1 h","A3321 (Aegean) · HER 21:55 → ATH · 1 h layover"),
-    B("A3384 (Olympic) · ATH → Mykonos, llegada 00:30","A3384 (Olympic) · ATH → Mykonos, landing 00:30"),
-    B("Check-in de madrugada en Casa Grande (¡ya avisados de la hora!)","Small-hours check-in at Casa Grande (they know we're coming!)"),
+  { d:16, sem:B("JUE","THU"), emoji:"🌙", titulo:B("Creta entera → Mykonos (nocturno)","Full Crete day → Mykonos (night hop)"), pill:"vuelo", items:[
+    B("Mañana: lo pendiente del día 15 (playa o acuario)","Morning: whatever day 15 left undone (beach or aquarium)"),
+    B("Comida tranquila → tarde de piscina y ducha (late check-out pedido)","Easy lunch → afternoon pool & shower (late check-out requested)"),
+    B("19:45 taxi → HER → A3321 21:55 → escala en Atenas → A3384 → Mykonos 00:30","19:45 taxi → HER → A3321 21:55 → Athens layover → A3384 → Mykonos 00:30"),
+    B("Check-in de madrugada en Casa Grande (pickup pedido al hotel)","Small-hours check-in at Casa Grande (hotel pickup requested)"),
   ]},
-  { d:17, sem:B("VIE","FRI"), emoji:"⛱️", titulo:B("Platis Gialos + Chora","Platis Gialos + Chora"), pill:"mykonos", items:[
-    B("Mañana tranquila (nos acostamos tarde) + playa de Platis Gialos a 200 m","Slow morning (late night!) + Platis Gialos beach 200 m away"),
-    B("Tarde-noche: Mykonos town (Chora)","Late afternoon and evening: Mykonos town (Chora)"),
-    B("Little Venice y molinos de Kato Mili AL ATARDECER (~20:40) — la foto del viaje","Little Venice & the Kato Mili windmills AT SUNSET (~20:40) — the photo of the trip"),
+  { d:17, sem:B("VIE","FRI"), emoji:"⛱️", titulo:B("Mañana sagrada + Chora","Sacred lazy morning + Chora"), pill:"mykonos", items:[
+    B("Mañana de NO hacer nada: dormir, desayuno tardío","Morning of doing NOTHING: sleep in, late breakfast"),
+    B("Playa de Platis Gialos (a 200 m) todo el día","Platis Gialos beach (200 m away) all day"),
+    B("18:30 a Chora: callejeo y Little Venice","18:30 to Chora: wandering + Little Venice"),
+    B("20:40 atardecer en los molinos → cena en Chora","20:40 sunset at the windmills → dinner in Chora"),
   ]},
   { d:18, sem:B("SÁB","SAT"), emoji:"🚤", titulo:B("Ruta de calas en water-taxi","Cove-hopping by water-taxi"), pill:"mykonos", items:[
-    B("Water-taxi desde Platis Gialos: Agia Anna → Paraga → Paradise → Super Paradise → Elia","Water-taxi from Platis Gialos: Agia Anna → Paraga → Paradise → Super Paradise → Elia"),
-    B("Psarou y Nammos al lado para el 'postureo'","Psarou & Nammos next door for the glam factor"),
-    B("Cena en el paseo de Platis Gialos","Dinner on the Platis Gialos promenade"),
+    B("10:30 water-taxi: Paraga → Paradise (DJs desde las 16h) → Super Paradise o Elia","10:30 water-taxi: Paraga → Paradise (DJs from 4pm) → Super Paradise or Elia"),
+    B("Vuelta en taxi-boat → cena en el paseo de Platis Gialos","Taxi-boat back → dinner on the Platis Gialos promenade"),
   ]},
-  { d:19, sem:B("DOM","SUN"), emoji:"🛍️", titulo:B("Chora sin prisas","Chora, no rush"), pill:"mykonos", items:[
-    B("Mañana de playa o excursión opcional a Delos (isla arqueológica, barco 30 min)","Beach morning or an optional Delos trip (archaeological island, 30-min boat)"),
-    B("Chora: compras, callejeo, iglesia de Panagia Paraportiani","Chora: shopping, wandering, Panagia Paraportiani church"),
-    B("Opcional noche: Cavo Paradiso o Scorpios (5–10 min en taxi)","Optional night out: Cavo Paradiso or Scorpios (5–10 min by taxi)"),
+  { d:19, sem:B("DOM","SUN"), emoji:"🛍️", titulo:B("Domingo a la carta","Sunday à la carte"), pill:"mykonos", items:[
+    B("Madrugadores: barco a Delos 9:00 (vuelta 13:00) · resto: mañana de playa","Early birds: 9:00 boat to Delos (back 13:00) · the rest: beach morning"),
+    B("Tarde: paseo a Psarou (a mirar yates 😎) → Ano Mera (monasterio + taberna local)","Afternoon: walk to Psarou (yacht-watching 😎) → Ano Mera (monastery + local taverna)"),
+    B("Última noche en Chora · opcional: Cavo Paradiso / Scorpios","Last night in Chora · optional: Cavo Paradiso / Scorpios"),
   ]},
   { d:20, sem:B("LUN","MON"), emoji:"🛫", titulo:B("Vuelta a casa","Homeward bound"), pill:"warn", items:[
-    B("Última mañana de playa + check-out","One last beach morning + check-out"),
-    B("A3379 (Aegean) · JMK 17:45 → ATH 18:25","A3379 (Aegean) · JMK 17:45 → ATH 18:25"),
-    B("⚠️ CONEXIÓN 2h25 — billetes separados: ir ligeros, solo equipaje de mano, cero despistes","⚠️ 2h25 CONNECTION — separate tickets: travel light, hand luggage only, zero distractions"),
-    B("IB836 directo · ATH 20:50 → MAD 23:45 · ¡A casa con mil fotos!","IB836 non-stop · ATH 20:50 → MAD 23:45 · home with a thousand photos!"),
+    B("Playa hasta las 13:30 → ducha y cierre de maletas","Beach until 13:30 → shower and pack up"),
+    B("15:40 pickup → JMK → A3379 17:45 → ATH 18:25","15:40 pickup → JMK → A3379 17:45 → ATH 18:25"),
+    B("⚠️ CONEXIÓN 2h25 — solo equipaje de mano, cero despistes","⚠️ 2h25 CONNECTION — hand luggage only, zero distractions"),
+    B("IB836 · ATH 20:50 → MAD 23:45 · ¡a casa con mil fotos!","IB836 · ATH 20:50 → MAD 23:45 · home with a thousand photos!"),
   ]},
 ];
 
