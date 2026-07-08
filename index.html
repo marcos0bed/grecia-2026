@@ -343,6 +343,10 @@
   <!-- ============ TAB RESERVAS ============ -->
   <section class="tab" id="tab-reservas">
     <h2 class="sec" id="sec-vuelos"></h2>
+    <div class="card" style="border-left:4px solid var(--gold)">
+      <b id="eq-titulo"></b>
+      <p class="muted" style="margin-top:6px" id="eq-regla"></p>
+    </div>
     <div id="vuelos"></div>
     <div class="alerta" id="alerta20"></div>
     <h2 class="sec" id="sec-hoteles"></h2>
@@ -396,7 +400,7 @@
 </nav>
 
 <script>
-const APP_VERSION = "v-04a91477 · 08 Jul 11:33";
+const APP_VERSION = "v-70e6ed13 · 08 Jul 11:34";
 
 function forceUpdate(b){
   b.textContent = '…';
@@ -412,6 +416,8 @@ const B = (es, en) => ({es, en});
 const t = v => (v && typeof v === 'object' && !Array.isArray(v)) ? v[lang] : v;
 
 const UI = {
+  eqTitulo: B("🧳 Regla de equipaje del viaje","🧳 Trip baggage rule"),
+  eqRegla: B("Cada uno: 1 trolley (máx. 8 kg) + 1 mochila pequeña (40×30×15), y 1 maleta 23 kg entre todos. Iberia y SKY: trolley y mochila en cabina. Aegean 16 jul: trolleys a bodega y mochila en mano. Aegean 20 jul: mochila DENTRO del trolley (un solo bulto) — clave para la conexión de Atenas.","Each of us: 1 trolley (max 8 kg) + 1 small backpack (40×30×15), plus 1 shared 23 kg suitcase. Iberia & SKY: trolley and backpack in cabin. Aegean Jul 16: trolleys checked, backpack in hand. Aegean Jul 20: backpack INSIDE the trolley (single piece) — key for the Athens connection."),
   heroSub: B("Familia González Gallardo · 11 → 20 de julio", "González Gallardo family · July 11 → 20"),
   heroRuta: B("Madrid ✈ Atenas ✈ Creta ✈ Mykonos ✈ Madrid", "Madrid ✈ Athens ✈ Crete ✈ Mykonos ✈ Madrid"),
   cdDias: B("días","days"), cdHoras: B("horas","hours"), cdMin: B("min","min"), cdSeg: B("seg","sec"),
@@ -653,7 +659,7 @@ const CHECKLIST = [
    B("Al llegar el voucher: guardar el teléfono del conductor · reconfirmar la vuelta el día 19","When the voucher arrives: save the driver's phone · reconfirm the return on the 19th")],
   [B("🎧 Reservar Scorpios — WhoMadeWho, vie 17 (2 pax, ~150 €/pp)","🎧 Book Scorpios — WhoMadeWho, Fri 17 (2 pax, ~€150 pp)"),
    B("WhatsApp +30 694 573 2699 · preguntar también el sáb 18 (&ME) para comparar","WhatsApp +30 694 573 2699 · ask about Sat 18 (&ME) too, to compare")],
-  [B("🧳 AÑADIR maleta 23 kg en GQ216 (13 jul) y A3379 (20 jul) — verificado: NO incluida","🧳 ADD a 23 kg bag on GQ216 (Jul 13) and A3379 (Jul 20) — verified: NOT included"),
+  [B("🧳 Equipaje: comprar maleta 23 kg en GQ216 y AFJ24A + 5ª pieza en AFUC8F (para el 4º trolley)","🧳 Baggage: buy the 23 kg bag on GQ216 and AFJ24A + a 5th piece on AFUC8F (for the 4th trolley)"),
    B("En Trip.com (I5OYDG / AFJ24A) · el 16-jul ya está pagada · online, no en mostrador","On Trip.com (I5OYDG / AFJ24A) · Jul 16 already paid · online, not at the counter")],
   [B("⚠️ Aegean (16 y 20 jul): solo 1 bulto de mano 8 kg/persona — SIN accesorio personal","⚠️ Aegean (Jul 16 & 20): only 1 cabin bag 8 kg pp — NO personal item"),
    B("Mochila O trolley, no ambos, o cobran en puerta · SKY (13 jul) sí incluye accesorio","Backpack OR trolley, not both, or they charge at the gate · SKY (Jul 13) does include a personal item")],
@@ -1064,7 +1070,7 @@ function renderAll(){
   tickCountdown();
 
   const secs = { 'sec-etapas':UI.secEtapas, 'sec-familia':UI.secFamilia, 'sec-dias':UI.secDias,
-    'sec-vuelos':UI.secVuelos, 'sec-hoteles':UI.secHoteles, 'sec-traslados':UI.secTraslados,
+    'sec-vuelos':UI.secVuelos, 'eq-titulo':UI.eqTitulo, 'eq-regla':UI.eqRegla, 'sec-hoteles':UI.secHoteles, 'sec-traslados':UI.secTraslados,
     'sec-antes':UI.secAntes, 'sec-maleta':UI.secMaleta, 'sec-frases':UI.secFrases, 'sec-sos':UI.secSOS };
   for (const [id, v] of Object.entries(secs)) document.getElementById(id).textContent = t(v);
 
