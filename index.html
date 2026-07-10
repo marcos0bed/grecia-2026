@@ -400,7 +400,7 @@
 </nav>
 
 <script>
-const APP_VERSION = "v-ca420b85 · 10 Jul 18:04";
+const APP_VERSION = "v-2f74bd8c · 10 Jul 19:25";
 
 function forceUpdate(b){
   b.textContent = '…';
@@ -521,11 +521,12 @@ const DIAS = [
     B("19:45 taxi → HER → A3321 21:55 → escala en Atenas → A3384 → Mykonos 00:30","19:45 taxi → HER → A3321 21:55 → Athens layover → A3384 → Mykonos 00:30"),
     B("Check-in de madrugada en Casa Grande (pickup pedido al hotel)","Small-hours check-in at Casa Grande (hotel pickup requested)"),
   ]},
-  { d:17, sem:B("VIE","FRI"), emoji:"⛱️", titulo:B("Mañana sagrada + Chora","Sacred lazy morning + Chora"), pill:"mykonos", items:[
-    B("Mañana de NO hacer nada: dormir, desayuno tardío","Morning of doing NOTHING: sleep in, late breakfast"),
-    B("Playa de Platis Gialos (a 200 m) todo el día","Platis Gialos beach (200 m away) all day"),
-    B("18:30 a Chora: callejeo y Little Venice","18:30 to Chora: wandering + Little Venice"),
-    B("20:40 atardecer en los molinos → cena en Chora","20:40 sunset at the windmills → dinner in Chora"),
+  { d:17, sem:B("VIE","FRI"), emoji:"🎧", titulo:B("Scorpios en familia + WhoMadeWho","Family Scorpios + WhoMadeWho"), pill:"mykonos", items:[
+    B("Mañana de NO hacer nada: dormir, desayuno tardío, playa de Platis Gialos","Morning of doing NOTHING: sleep in, late breakfast, Platis Gialos beach"),
+    B("14:40 paseo a Scorpios (Paraga, 12 min a pie) → 15:00 COMIDA los 4 ✅ reserva 6R3K8U4BMRBD","14:40 walk to Scorpios (Paraga, 12 min) → 15:00 LUNCH for 4 ✅ booking 6R3K8U4BMRBD"),
+    B("~17:30 las chicas vuelven al hotel (a pie, de día) · papás se quedan","~17:30 the girls walk back to the hotel (daylight) · parents stay on"),
+    B("19:00-20:40 Sunset Ritual (percusión, atardecer 20:40) → WhoMadeWho (Live) 🎧","19:00-20:40 Sunset Ritual (percussion, sunset 20:40) → WhoMadeWho (Live) 🎧"),
+    B("Chora y molinos quedan para el domingo — hoy manda Paraga","Chora & windmills wait until Sunday — today belongs to Paraga"),
   ]},
   { d:18, sem:B("SÁB","SAT"), emoji:"🚤", titulo:B("Ruta de calas en water-taxi","Cove-hopping by water-taxi"), pill:"mykonos", items:[
     B("10:30 water-taxi: Paraga → Paradise (DJs desde las 16h) → Super Paradise o Elia","10:30 water-taxi: Paraga → Paradise (DJs from 4pm) → Super Paradise or Elia"),
@@ -658,8 +659,8 @@ const CHECKLIST = [
    B("SKY express NO tiene app oficial: check-in en skyexpress.gr con I5OYDG — ojo con las apps impostoras del App Store","SKY express has NO official app: check in at skyexpress.gr with I5OYDG — beware of impostor apps on the App Store")],
   [B("✅ Transfer JMK RESERVADO ida y vuelta — Suntransfers SUNTR_WS6758 (109,95 €)","✅ JMK transfer BOOKED both ways — Suntransfers SUNTR_WS6758 (€109.95)"),
    B("Al llegar el voucher: guardar el teléfono del conductor · reconfirmar la vuelta el día 19","When the voucher arrives: save the driver's phone · reconfirm the return on the 19th")],
-  [B("🎧 Reservar Scorpios — WhoMadeWho, vie 17 (2 pax, ~150 €/pp)","🎧 Book Scorpios — WhoMadeWho, Fri 17 (2 pax, ~€150 pp)"),
-   B("WhatsApp +30 694 573 2699 · preguntar también el sáb 18 (&ME) para comparar","WhatsApp +30 694 573 2699 · ask about Sat 18 (&ME) too, to compare")],
+  [B("✅ Scorpios RESERVADO — vie 17, 15:00, comida los 4 + ritual (los papás)","✅ Scorpios BOOKED — Fri 17, 15:00, lunch for 4 + ritual (parents)"),
+   B("Ref 6R3K8U4BMRBD · tarjeta puesta · cancelación gratis hasta mié 15 15:00","Ref 6R3K8U4BMRBD · card on file · free cancellation until Wed 15, 3pm")],
   [B("✅ Equipaje COMPRADO en los 5 vuelos: maleta + 4 trolleys cubiertos (Aegean días 16 y 20: trolleys a bodega)","✅ Baggage BOUGHT on all 5 flights: suitcase + 4 trolleys covered (Aegean Jul 16 & 20: trolleys go checked)"),
    B("En Trip.com (I5OYDG / AFJ24A) · el 16-jul ya está pagada · online, no en mostrador","On Trip.com (I5OYDG / AFJ24A) · Jul 16 already paid · online, not at the counter")],
   [B("⚠️ Aegean (16 y 20 jul): solo 1 bulto de mano 8 kg/persona — SIN accesorio personal","⚠️ Aegean (Jul 16 & 20): only 1 cabin bag 8 kg pp — NO personal item"),
@@ -883,7 +884,7 @@ const DESTINOS = {
       nota: B("Confirmado en las webs oficiales (scorpios.com · cavoparadiso.gr). Scorpios está en Paraga, a 10-15 min A PIE del hotel; en Cavo el cabeza de cartel sale a las 2-4 AM. Las chicas se quedan en el hotel.",
               "Confirmed on the official sites (scorpios.com · cavoparadiso.gr). Scorpios is in Paraga, a 10-15 min WALK from the hotel; at Cavo the headliner goes on at 2-4 AM. The girls stay at the hotel."),
       eventos: [
-        {fecha:B("Vie 17","Fri 17"), artista:"WhoMadeWho (Live) + Lannka", club:B("Scorpios · sunset 17-24h","Scorpios · sunset 5pm-12am"), plan:B("⭐ ELEGIDO — reservar (~150 €/pp) · WhatsApp +30 694 573 2699","⭐ CHOSEN — book it (~€150 pp) · WhatsApp +30 694 573 2699"), destacado:true},
+        {fecha:B("Vie 17","Fri 17"), artista:"WhoMadeWho (Live) + Lannka", club:B("Scorpios · sunset 17-24h","Scorpios · sunset 5pm-12am"), plan:B("✅ RESERVADO: comida 15:00 los 4 (ref 6R3K8U4BMRBD, sin mínimo) → ritual + directo desde barra","✅ BOOKED: 15:00 lunch for 4 (ref 6R3K8U4BMRBD, no minimum) → ritual + live set from the bar"), destacado:true},
         {fecha:B("Vie 17","Fri 17"), artista:"John Summit", club:"Cavo Paradiso", plan:B("~150 € entrada · cavoparadiso.gr","~€150 entry · cavoparadiso.gr"), destacado:false},
         {fecha:B("Sáb 18","Sat 18"), artista:"&ME (Keinemusik) & Valeron", club:B("Scorpios · sunset","Scorpios · sunset"), plan:B("LA fecha de la semana — las mesas vuelan","THE date of the week — tables go fast"), destacado:false},
         {fecha:B("Sáb 18","Sat 18"), artista:"Benny Benassi", club:"Cavo Paradiso", plan:B("entrada en cavoparadiso.gr","entry at cavoparadiso.gr"), destacado:false},
