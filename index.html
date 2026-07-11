@@ -191,6 +191,12 @@
   .day .titulo { font-weight:700; margin-bottom:4px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
   .day ul { margin:8px 0 0 18px; font-size:.88rem; }
   .day li { margin-bottom:4px; }
+  .mapchips { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; padding-top:10px; border-top:1px dashed var(--line); }
+  .mapchip {
+    font-size:.72rem; font-weight:600; padding:5px 10px; border-radius:99px;
+    background:var(--sand); color:var(--aegean-deep); white-space:nowrap;
+  }
+  @media (prefers-color-scheme: dark) { .mapchip { color:var(--sky); } }
 
   /* ===== Vuelos ===== */
   .vuelo { display:flex; align-items:center; gap:12px; }
@@ -400,7 +406,7 @@
 </nav>
 
 <script>
-const APP_VERSION = "v-28fb9d1c · 11 Jul 04:18";
+const APP_VERSION = "v-56b97fbe · 11 Jul 14:50";
 
 function forceUpdate(b){
   b.textContent = '…';
@@ -485,6 +491,13 @@ const DIAS = [
     B("16:00 Templo de Zeus + Arco de Adriano → Jardín Nacional → 17:00 mini cambio de guardia en Síntagma","16:00 Temple of Zeus + Hadrian's Arch → National Garden → 17:00 mini changing of the guard at Syntagma"),
     B("Vuelta por Ermou (compras) → 19:30 Plaka y Anafiotika ya sin calor","Back along Ermou (shopping) → 19:30 Plaka & Anafiotika once it cools"),
     B("20:30 atardecer en el Areópago → 21:15 cena en las escalinatas de Mnisikleous","20:30 sunset from the Areopagus → 21:15 dinner on the Mnisikleous steps"),
+  ], paradas:[
+    {n:B("🏛️ Templo de Zeus (~20 min a pie)","🏛️ Temple of Zeus (~20 min walk)"), q:"Temple of Olympian Zeus Athens"},
+    {n:B("🌳 Jardín Nacional (al lado)","🌳 National Garden (next door)"), q:"National Garden Athens"},
+    {n:B("🎖️ Síntagma (cambio de guardia)","🎖️ Syntagma (guard change)"), q:"Syntagma Square Athens"},
+    {n:B("🏘️ Anafiotika","🏘️ Anafiotika"), q:"Anafiotika Athens"},
+    {n:B("🌅 Areópago (atardecer)","🌅 Areopagus (sunset)"), q:"Areopagus Hill Athens"},
+    {n:B("🍽️ Mnisikleous (cena)","🍽️ Mnisikleous (dinner)"), q:"Mnisikleous Street Plaka Athens"},
   ]},
   { d:12, sem:B("DOM","SUN"), emoji:"🏛️", titulo:B("EL día grande de Atenas","Athens: THE big day"), pill:"atenas", items:[
     B("08:30 Ágora Antigua recién abierta y fresca (templo de Hefesto) — entrada en puerta","08:30 Ancient Agora just opened and cool (Temple of Hephaestus) — ticket at the gate"),
@@ -1108,6 +1121,7 @@ function renderAll(){
       <div class="cuerpo"><div class="card">
         <div class="titulo">${d.emoji} ${esc(t(d.titulo))} <span class="pill ${PILLS[d.pill].cls}">${t(PILLS[d.pill].txt)}</span></div>
         <ul>${d.items.map(i=>`<li>${esc(t(i))}</li>`).join('')}</ul>
+        ${d.paradas ? `<div class="mapchips">${d.paradas.map(p=>`<a class="mapchip" href="https://maps.apple.com/?q=${encodeURIComponent(p.q)}" target="_blank" rel="noopener">${esc(t(p.n))}</a>`).join('')}</div>` : ''}
       </div></div>
     </div>`).join('');
 
