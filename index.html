@@ -406,7 +406,7 @@
 </nav>
 
 <script>
-const APP_VERSION = "v-af90545a · 12 Jul 13:57";
+const APP_VERSION = "v-0f46bb09 · 12 Jul 14:14";
 
 function forceUpdate(b){
   b.textContent = '…';
@@ -520,17 +520,22 @@ const DIAS = [
     {n:B("🍽️ Cena en Psiri","🍽️ Dinner in Psiri"), q:"Psyri Athens"},
   ]},
   { d:13, sem:B("LUN","MON"), emoji:"🏃", titulo:B("Carrera + mañana ateniense → Creta","Morning run + Athens → Crete"), pill:"vuelo", items:[
-    B("06:30 desayuno ligero (tostada/plátano + café) → 07:00 salida al Jardín Nacional","06:30 light breakfast (toast/banana + coffee) → 07:00 head to the National Garden"),
-    B("07:00-08:00 CARRERA: bucles del Jardín Nacional + vuelta al Estadio Panatenaico (mármol blanco, 1896) — sombra casi todo el recorrido, ajustar distancia con más o menos vueltas","07:00-08:00 RUN: National Garden loops + lap around the Panathenaic Stadium (white marble, 1896) — shade most of the way, adjust distance with more or fewer loops"),
-    B("08:15 ducha → desayuno de verdad en el apartamento o cerca","08:15 shower → real breakfast at the apartment or nearby"),
-    B("9:30 Kerameikos (tranquilo, entrada aparte) o compras","9:30 Kerameikos (peaceful, separate ticket) or easy shopping"),
-    B("11:00 Mercado Central Varvakios + barrio de Psiri","11:00 Varvakios Central Market + Psiri quarter"),
-    B("13:00 comida · alternativa: Museo Arqueológico Nacional (los lunes abre a las 13:00)","13:00 lunch · alternative: National Archaeological Museum (opens 13:00 on Mondays)"),
-    B("17:30 recoger maletas → 18:45 metro L3 → 19:25 aeropuerto","17:30 pick up luggage → 18:45 Metro L3 → 19:25 airport"),
+    B("06:30 desayuno ligero (tostada/plátano + café) — SOLO Marcos y Lorena; las chicas siguen durmiendo","06:30 light breakfast (toast/banana + coffee) — Marcos & Lorena ONLY; the girls keep sleeping"),
+    B("07:00-08:00 CARRERA (Marcos+Lorena): Templo de Hefesto → Museo de la Acrópolis → Filopappou → vuelta al apartamento","7:00-8:00am RUN (Marcos+Lorena): Temple of Hephaestus → Acropolis Museum → Philopappos → back to the apartment"),
+    B("08:15 ducha → desayuno de verdad todos juntos, ya con las chicas despiertas","8:15am shower → real breakfast all together, girls awake by now"),
+    B("11:00 CHECK-OUT — maletas a los lockers gratis de planta -1","11:00am CHECK-OUT — bags to the free lockers on floor -1"),
+    B("11:15 Mercado Central Varvakios + barrio de Psiri (Kerameikos CERRADO por obras, sin fecha de reapertura)","11:15am Varvakios Central Market + Psiri quarter (Kerameikos CLOSED for works, no reopening date)"),
+    B("13:00-15:00 Museo Arqueológico Nacional (abre 13:00 los lunes) — AC, la mejor colección de Grecia","1:00-3:00pm National Archaeological Museum (opens 1pm on Mondays) — AC, Greece's best collection"),
+    B("15:00-17:00 comida tranquila + café sin prisa por la zona","3:00-5:00pm easy lunch + coffee, no rush, around the area"),
+    B("17:30 recoger maletas → 18:45 metro L3 → 19:25 aeropuerto","5:30pm pick up luggage → 6:45pm Metro L3 → 7:25pm airport"),
     B("GQ216 · ATH 21:15 → Heraklion 22:05 → taxi (10 min) → Capsis","GQ216 · ATH 21:15 → Heraklion 22:05 → taxi (10 min) → Capsis"),
   ], paradas:[
-    {n:B("🏃 Jardín Nacional (ruta running)","🏃 National Garden (running route)"), q:"National Garden Athens"},
-    {n:B("🏟️ Estadio Panatenaico","🏟️ Panathenaic Stadium"), q:"Panathenaic Stadium Athens"},
+    {n:B("🏃 Ruta de correr completa (Google Maps)","🏃 Full running route (Google Maps)"), url:"https://www.google.com/maps/dir/?api=1&origin=Central+Stay+Athens&destination=Central+Stay+Athens&waypoints=Temple+of+Hephaestus,+Athens%7CAcropolis+Museum,+Athens%7CFilopappou+Hill,+Athens&travelmode=walking"},
+    {n:B("🏛️ Templo de Hefesto","🏛️ Temple of Hephaestus"), q:"Temple of Hephaestus Athens"},
+    {n:B("🖼️ Museo de la Acrópolis","🖼️ Acropolis Museum"), q:"Acropolis Museum Athens"},
+    {n:B("🌳 Filopappou","🌳 Philopappos Hill"), q:"Philopappos Hill Athens"},
+    {n:B("🛍️ Mercado Varvakios","🛍️ Varvakios Market"), q:"Varvakios Central Market Athens"},
+    {n:B("🏺 Museo Arqueológico Nacional","🏺 National Archaeological Museum"), q:"National Archaeological Museum Athens"},
   ]},
   { d:14, sem:B("MAR","TUE"), emoji:"🏺", titulo:B("Knossos y minoicos","Knossos & the Minoans"), pill:"creta", items:[
     B("Desayuno tranquilo → 9:30 Knossos (bus nº 2 o taxi, 15 min · 2 h de visita)","Easy breakfast → 9:30 Knossos (bus #2 or taxi, 15 min · 2 h visit)"),
@@ -1138,7 +1143,7 @@ function renderAll(){
       <div class="cuerpo"><div class="card">
         <div class="titulo">${d.emoji} ${esc(t(d.titulo))} <span class="pill ${PILLS[d.pill].cls}">${t(PILLS[d.pill].txt)}</span></div>
         <ul>${d.items.map(i=>`<li>${esc(t(i))}</li>`).join('')}</ul>
-        ${d.paradas ? `<div class="mapchips">${d.paradas.map(p=>`<a class="mapchip" href="https://maps.apple.com/?q=${encodeURIComponent(p.q)}" target="_blank" rel="noopener">${esc(t(p.n))}</a>`).join('')}</div>` : ''}
+        ${d.paradas ? `<div class="mapchips">${d.paradas.map(p=>`<a class="mapchip" href="${p.url||('https://maps.apple.com/?q='+encodeURIComponent(p.q))}" target="_blank" rel="noopener">${esc(t(p.n))}</a>`).join('')}</div>` : ''}
       </div></div>
     </div>`).join('');
 
