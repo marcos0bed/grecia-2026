@@ -406,7 +406,7 @@
 </nav>
 
 <script>
-const APP_VERSION = "v-456ae2c5 · 15 Jul 09:46";
+const APP_VERSION = "v-473c220e · 15 Jul 23:10";
 
 function forceUpdate(b){
   b.textContent = '…';
@@ -555,7 +555,7 @@ const DIAS = [
     B("⏰ 06:45 salir del Capsis a pie hacia el puerto (~1 km, 12-15 min) — maletas ya cerradas la noche antes","⏰ 06:45 leave the Capsis on foot for the port (~1 km, 12-15 min) — bags packed the night before"),
     B("Check-in cierra 07:15 — DNI de cada uno + email de confirmación (o e-ticket si el check-in online ya está hecho)","Check-in closes 07:15 — everyone's ID + confirmation email (or e-ticket if online check-in is already done)"),
     B("⛴️ SeaJets 08:00 Heraklion → 13:05 Mykonos (Puerto Nuevo, Tourlos) · Reserved Seat Silver · 5h05","⛴️ SeaJets 08:00 Heraklion → 13:05 Mykonos (New Port, Tourlos) · Reserved Seat Silver · 5h05"),
-    B("Llegada al puerto → shuttle de Casa Grande (pendiente confirmar) o taxi en el propio puerto → Casa Grande","Arrival at the port → Casa Grande shuttle (pending confirmation) or taxi at the port itself → Casa Grande"),
+    B("✅ Llegada al puerto → shuttle de Casa Grande CONFIRMADO: conductor esperando FUERA del puerto con cartel 'Casa Grande Hotel'. Pago 40€ EN RECEPCIÓN del hotel, no al conductor","✅ Arrival at the port → Casa Grande shuttle CONFIRMED: driver waiting OUTSIDE the port with a 'Casa Grande Hotel' sign. Pay the €40 AT RECEPTION, not the driver"),
     B("Check-in oficial 14:00 (avisados de llegada diurna; pueden guardar maletas si llegáis antes)","Official check-in 14:00 (they know we're arriving in daytime; they can hold bags if we're early)"),
   ], paradas:[
     {n:B("⛴️ Puerto de Heraklion (embarque)","⛴️ Heraklion Port (departure)"), url:"https://maps.apple.com/?q=Heraklion+Port+Passenger+Station,+Leoforos+Nearchou,+71306+Heraklion,+Greece"},
@@ -671,12 +671,12 @@ const TRASLADOS = [
     plan:B("⛴️ Ferry SeaJets 08:00 (ya NO hay vuelo nocturno). ~1 km cuesta abajo, 12-15 min a pie — o taxi si vais cargados. Check-in cierra 07:15: DNI de cada uno.",
            "⛴️ SeaJets ferry at 08:00 (no longer a night flight). ~1 km downhill, 12-15 min walk — or taxi if you're loaded down. Check-in closes 07:15: everyone's ID."),
     coste:B("a pie gratis · taxi ~5-8 €","free on foot · taxi ~€5-8"), dur:"12-15 min" },
-  { emoji:"🚖", warn:false,
-    fecha:B("Jue 16 jul · ~13:05","Thu, Jul 16 · ~13:05"),
+  { emoji:"🚐", warn:false,
+    fecha:B("Jue 16 jul · 13:05","Thu, Jul 16 · 13:05"),
     ruta:B("Puerto Nuevo Mykonos (Tourlos) → Casa Grande (Platis Gialos)","Mykonos New Port (Tourlos) → Casa Grande (Platis Gialos)"),
-    plan:B("⚠️ El transfer Suntransfers SUNTR_WS6758 de IDA fue CANCELADO (reembolso 100% confirmado) — no cubría esta ruta puerto→hotel. Plan A: shuttle propio de Casa Grande (40 €/trayecto, pendiente confirmar si recoge en el puerto). Plan B: taxi libre en la parada del puerto.",
-           "⚠️ The outbound Suntransfers SUNTR_WS6758 transfer was CANCELLED (100% refund confirmed) — it didn't cover this port→hotel route. Plan A: Casa Grande's own shuttle (€40/leg, pending confirmation it can collect at the port). Plan B: taxi rank at the port."),
-    coste:B("pendiente (shuttle 40 € o taxi libre)","pending (€40 shuttle or metered taxi)"), dur:"~15-20 min" },
+    plan:B("✅ RESERVADO — shuttle propio de Casa Grande, CONFIRMADO por email 15/07. El conductor espera FUERA del puerto a las 13:05 con un cartel 'Casa Grande Hotel'. (El transfer Suntransfers SUNTR_WS6758 original de ida fue cancelado con reembolso 100% — no cubría esta ruta puerto→hotel).",
+           "✅ BOOKED — Casa Grande's own shuttle, CONFIRMED by email on 15/07. The driver waits OUTSIDE the port at 13:05 holding a 'Casa Grande Hotel' sign. (The original outbound Suntransfers SUNTR_WS6758 transfer was cancelled with a 100% refund — it didn't cover this port→hotel route.)"),
+    coste:B("40 € — PAGAR EN RECEPCIÓN del hotel, no al conductor","€40 — PAY AT RECEPTION, not the driver"), dur:"~15-20 min" },
   { emoji:"🚖", warn:false,
     fecha:B("Lun 20 jul · 15:25","Mon, Jul 20 · 15:25"),
     ruta:B("Casa Grande → Aeropuerto JMK","Casa Grande → JMK airport"),
