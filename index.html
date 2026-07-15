@@ -406,7 +406,7 @@
 </nav>
 
 <script>
-const APP_VERSION = "v-520115b0 · 12 Jul 14:24";
+const APP_VERSION = "v-456ae2c5 · 15 Jul 09:46";
 
 function forceUpdate(b){
   b.textContent = '…';
@@ -551,11 +551,15 @@ const DIAS = [
     B("16:30 vuelta al hotel → PISCINA de la azotea 🍹 tarde tranquila","4:30pm back to the hotel → ROOFTOP POOL 🍹 easy afternoon"),
     B("Cena por el centro","Dinner in the old town"),
   ]},
-  { d:16, sem:B("JUE","THU"), emoji:"🌙", titulo:B("Última playa → Mykonos (nocturno)","Last beach → Mykonos (night hop)"), pill:"vuelo", items:[
-    B("Mañana: última sesión de playa en Ammoudara","Morning: one last beach session at Ammoudara"),
-    B("Comida tranquila → tarde de piscina y ducha (late check-out: pedirlo en recepción ese día, con cargo; plan B consigna gratis)","Easy lunch → afternoon pool & shower (late check-out: ask at reception that day, extra charge; plan B free storage)"),
-    B("19:45 taxi → HER → A3321 21:55 → escala en Atenas → A3384 → Mykonos 00:30","19:45 taxi → HER → A3321 21:55 → Athens layover → A3384 → Mykonos 00:30"),
-    B("Check-in de madrugada en Casa Grande (pickup pedido al hotel)","Small-hours check-in at Casa Grande (hotel pickup requested)"),
+  { d:16, sem:B("JUE","THU"), emoji:"⛴️", titulo:B("Creta → Mykonos en ferry (madrugón)","Crete → Mykonos by ferry (early start)"), pill:"vuelo", items:[
+    B("⏰ 06:45 salir del Capsis a pie hacia el puerto (~1 km, 12-15 min) — maletas ya cerradas la noche antes","⏰ 06:45 leave the Capsis on foot for the port (~1 km, 12-15 min) — bags packed the night before"),
+    B("Check-in cierra 07:15 — DNI de cada uno + email de confirmación (o e-ticket si el check-in online ya está hecho)","Check-in closes 07:15 — everyone's ID + confirmation email (or e-ticket if online check-in is already done)"),
+    B("⛴️ SeaJets 08:00 Heraklion → 13:05 Mykonos (Puerto Nuevo, Tourlos) · Reserved Seat Silver · 5h05","⛴️ SeaJets 08:00 Heraklion → 13:05 Mykonos (New Port, Tourlos) · Reserved Seat Silver · 5h05"),
+    B("Llegada al puerto → shuttle de Casa Grande (pendiente confirmar) o taxi en el propio puerto → Casa Grande","Arrival at the port → Casa Grande shuttle (pending confirmation) or taxi at the port itself → Casa Grande"),
+    B("Check-in oficial 14:00 (avisados de llegada diurna; pueden guardar maletas si llegáis antes)","Official check-in 14:00 (they know we're arriving in daytime; they can hold bags if we're early)"),
+  ], paradas:[
+    {n:B("⛴️ Puerto de Heraklion (embarque)","⛴️ Heraklion Port (departure)"), url:"https://maps.apple.com/?q=Heraklion+Port+Passenger+Station,+Leoforos+Nearchou,+71306+Heraklion,+Greece"},
+    {n:B("⚓ Puerto Nuevo de Mykonos (Tourlos)","⚓ Mykonos New Port (Tourlos)"), q:"Mykonos New Port Tourlos"},
   ]},
   { d:17, sem:B("VIE","FRI"), emoji:"🎧", titulo:B("Scorpios en familia + WhoMadeWho","Family Scorpios + WhoMadeWho"), pill:"mykonos", items:[
     B("Mañana de NO hacer nada: dormir, desayuno tardío, playa de Platis Gialos","Morning of doing NOTHING: sleep in, late breakfast, Platis Gialos beach"),
@@ -592,8 +596,8 @@ const PILLS = {
 const VUELOS = [
   { fecha:B("Sáb 11 jul","Sat, Jul 11"), num:"IB841 · Iberia", de:"MAD", hde:"07:00", a:"ATH", ha:"11:45", extra:B("Directo","Non-stop"), loc:"—" },
   { fecha:B("Lun 13 jul","Mon, Jul 13"), num:"GQ216 · SKY express", de:"ATH", hde:"21:15", a:"HER", ha:"22:05", extra:B("Con seguro · Trip.com","With insurance · Trip.com"), loc:"I5OYDG" },
-  { fecha:B("Jue 16 jul","Thu, Jul 16"), num:"A3321 · Aegean", de:"HER", hde:"21:55", a:"ATH", ha:"22:55", extra:B("Escala 1 h en Atenas","1 h layover in Athens"), loc:"AFUC8F" },
-  { fecha:B("Jue 16 jul","Thu, Jul 16"), num:"A3384 · Olympic", de:"ATH", hde:"23:30", a:"JMK", ha:"00:30 +1", extra:B("Llegada de madrugada","Small-hours arrival"), loc:"AFUC8F" },
+  { fecha:B("Jue 16 jul","Thu, Jul 16"), num:B("❌ A3321+A3384 · CANCELADOS","❌ A3321+A3384 · CANCELLED"), de:"HER", hde:"—", a:"JMK", ha:"—", extra:B("Sustituidos por el ferry (reembolso 352,08 € en curso)","Replaced by the ferry (€352.08 refund in progress)"), loc:"AFUC8F" },
+  { fecha:B("Jue 16 jul","Thu, Jul 16"), num:"⛴️ SeaJets · Ferry", de:"Heraklion", hde:"08:00", a:"Mykonos", ha:"13:05", extra:B("Reserved Seat Silver · 5h05 · check-in cierra 07:15","Reserved Seat Silver · 5h05 · check-in closes 07:15"), loc:"DFP198581987" },
   { fecha:B("Lun 20 jul","Mon, Jul 20"), num:"A3379 · Aegean", de:"JMK", hde:"17:45", a:"ATH", ha:"18:25", extra:B("⚠️ conexión ajustada","⚠️ tight connection"), loc:"AFJ24A" },
   { fecha:B("Lun 20 jul","Mon, Jul 20"), num:"IB836 · Iberia", de:"ATH", hde:"20:50", a:"MAD", ha:"23:45", extra:B("Directo","Non-stop"), loc:"—" },
 ];
@@ -636,7 +640,7 @@ const HOTELES = [
       [B("Nota","Rating"), B("9,6 · playa a 200 m · piscina","9.6 · beach 200 m away · pool")],
       [B("Contacto","Contact"), "casagrandemykonos.com · +30 2289 078191"],
     ],
-    accion:B("📌 Avisar de la llegada de MADRUGADA (~01:00 del 17) para que no cancelen por no-show.","📌 Let them know we arrive in the SMALL HOURS (~01:00 on the 17th) so the booking is held."),
+    accion:B("📌 Llegada DIURNA ~13:00-14:00 del 16 (ferry, ya no vuelo nocturno) — avisados por email. Check-in oficial 14:00; guardan maletas si llegamos antes.","📌 DAYTIME arrival ~13:00-14:00 on the 16th (ferry, no longer a night flight) — they've been emailed. Official check-in 14:00; they'll hold bags if we arrive earlier."),
     mapa:"https://maps.apple.com/?q=Casa+Grande+Hotel+Platis+Gialos+Mykonos" },
 ];
 
@@ -661,18 +665,18 @@ const TRASLADOS = [
     plan:B("Taxi de la parada de llegadas (en julio hay coches coordinados con los vuelos; tarifa diurna hasta las 00:00). Plan B: bus urbano línea 12 (1,60 €/pax, hasta 00:30, sin sitio para maletas).",
            "Taxi from the arrivals rank (in July cars are matched to flights; day tariff until 00:00). Plan B: city bus line 12 (€1.60 pp, runs until 00:30, no luggage space)."),
     coste:"~15-25 €", dur:"10-15 min" },
-  { emoji:"🚕", warn:false,
-    fecha:B("Jue 16 jul · ~19:45","Thu, Jul 16 · ~19:45"),
-    ruta:B("Capsis Astoria → Aeropuerto HER","Capsis Astoria → HER airport"),
-    plan:B("Pedid el taxi en recepción (o parada en la propia Plateia Eleftherias). Vuelo a las 21:55 — saliendo a las 19:45 sobra margen.",
-           "Ask reception to call a taxi (or use the rank on Plateia Eleftherias itself). Flight at 21:55 — leaving at 19:45 gives plenty of margin."),
-    coste:"~15-25 €", dur:"10-15 min" },
+  { emoji:"🚶", warn:true,
+    fecha:B("Jue 16 jul · 06:45","Thu, Jul 16 · 06:45"),
+    ruta:B("Capsis Astoria → Puerto de Heraklion (a pie)","Capsis Astoria → Heraklion Port (on foot)"),
+    plan:B("⛴️ Ferry SeaJets 08:00 (ya NO hay vuelo nocturno). ~1 km cuesta abajo, 12-15 min a pie — o taxi si vais cargados. Check-in cierra 07:15: DNI de cada uno.",
+           "⛴️ SeaJets ferry at 08:00 (no longer a night flight). ~1 km downhill, 12-15 min walk — or taxi if you're loaded down. Check-in closes 07:15: everyone's ID."),
+    coste:B("a pie gratis · taxi ~5-8 €","free on foot · taxi ~€5-8"), dur:"12-15 min" },
   { emoji:"🚖", warn:false,
-    fecha:B("Vie 17 jul · 00:30","Fri, Jul 17 · 00:30"),
-    ruta:B("Aeropuerto JMK → Casa Grande (Platis Gialos)","JMK airport → Casa Grande (Platis Gialos)"),
-    plan:B("✅ RESERVADO — Suntransfers ref SUNTR_WS6758 (transfer privado, 4 pax). El conductor monitoriza el vuelo A3384 y espera aunque se retrase — guardad su teléfono del voucher. Recepción del hotel 24 h.",
-           "✅ BOOKED — Suntransfers ref SUNTR_WS6758 (private transfer, 4 pax). The driver tracks flight A3384 and waits even if it's delayed — save his phone from the voucher. Hotel reception is 24 h."),
-    coste:B("109,95 € ida y vuelta (reservado)","€109.95 return, booked"), dur:"8-10 min" },
+    fecha:B("Jue 16 jul · ~13:05","Thu, Jul 16 · ~13:05"),
+    ruta:B("Puerto Nuevo Mykonos (Tourlos) → Casa Grande (Platis Gialos)","Mykonos New Port (Tourlos) → Casa Grande (Platis Gialos)"),
+    plan:B("⚠️ El transfer Suntransfers SUNTR_WS6758 de IDA fue CANCELADO (reembolso 100% confirmado) — no cubría esta ruta puerto→hotel. Plan A: shuttle propio de Casa Grande (40 €/trayecto, pendiente confirmar si recoge en el puerto). Plan B: taxi libre en la parada del puerto.",
+           "⚠️ The outbound Suntransfers SUNTR_WS6758 transfer was CANCELLED (100% refund confirmed) — it didn't cover this port→hotel route. Plan A: Casa Grande's own shuttle (€40/leg, pending confirmation it can collect at the port). Plan B: taxi rank at the port."),
+    coste:B("pendiente (shuttle 40 € o taxi libre)","pending (€40 shuttle or metered taxi)"), dur:"~15-20 min" },
   { emoji:"🚖", warn:false,
     fecha:B("Lun 20 jul · 15:25","Mon, Jul 20 · 15:25"),
     ruta:B("Casa Grande → Aeropuerto JMK","Casa Grande → JMK airport"),
