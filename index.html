@@ -406,7 +406,7 @@
 </nav>
 
 <script>
-const APP_VERSION = "v-dc098b95 · 16 Jul 19:13";
+const APP_VERSION = "v-3b427c99 · 18 Jul 12:25";
 
 function forceUpdate(b){
   b.textContent = '…';
@@ -917,7 +917,13 @@ const DESTINOS = {
       {nombre:B("Souvlaki y gyros","Souvlaki & gyros"), nota:B("La opción barata que triunfa (~4-6 €); en Chora buscad donde haya cola de griegos, no primera línea de puerto.","The budget option that always wins (~€4–6); in Chora look for the queue of Greeks, not the harbour front.")},
       {nombre:B("Kopanisti de Mykonos","Kopanisti of Mykonos"), nota:B("Queso picante y cremoso con denominación de origen de la isla; untado en pan en cualquier taberna de Ano Mera.","Spicy, creamy PDO cheese from the island; spread on bread at any Ano Mera taverna.")},
       {nombre:B("Pescado fresco en Platis Gialos","Fresh fish at Platis Gialos"), nota:B("Pulpo a la brasa y pescado del día con los pies casi en la arena; preguntad el precio por kilo ANTES de pedir.","Grilled octopus and catch of the day with your feet almost in the sand; ask the price per kilo BEFORE ordering.")},
-      {nombre:"Loukoumades", nota:B("Buñuelos con miel y canela paseando por Chora de noche; hay versión con helado.","Honey-and-cinnamon doughnuts while strolling Chora at night; there's an ice-cream version.")}
+      {nombre:"Loukoumades", nota:B("Buñuelos con miel y canela paseando por Chora de noche; hay versión con helado.","Honey-and-cinnamon doughnuts while strolling Chora at night; there's an ice-cream version.")},
+      {nombre:B("Nikolas Taverna (Agia Anna)","Nikolas Taverna (Agia Anna)"), mapa:"https://maps.apple.com/?q=Nikolas+Taverna+Agia+Anna+Mykonos",
+       nota:B("10-15 min a pie desde Platis Gialos por el camino de costa hacia Paraga. Familiar de 3 generaciones, pescado del propio dueño. Pedid: gambas pequeñas y calamar frito, pargo fresco, gemista (verduras rellenas) o kleftiko. Higos gratis de postre. Mucho más barato que un beach club (~40-70€ los 4 con vino).",
+             "10-15 min walk from Platis Gialos along the coastal path towards Paraga. 3rd-generation family taverna, fish caught by the owner. Order: small shrimp and fried calamari, fresh snapper, gemista (stuffed veg) or kleftiko. Free figs for dessert. Much cheaper than a beach club (~€40-70 for 4 with wine).")},
+      {nombre:B("Nikos Gallop (Psarrou)","Nikos Gallop (Psarrou)"), mapa:"https://maps.apple.com/?q=Nikos+Gallop+Restaurant+Psarrou+Mykonos",
+       nota:B("15-20 min a pie desde Platis Gialos, pasado el cruce a Psarou (con algo de cuesta). Desde 1984, cocina cretense-mykoniota. Pedid: moussaka con gambas, sardinas a la parrilla, calamar frito, cordero a la mykoniota. Postre: portokalopita (tarta de naranja).",
+             "15-20 min walk from Platis Gialos, past the Psarou turn-off (some uphill). Family-run since 1984, Cretan-Mykonian cuisine. Order: shrimp moussaka, grilled sardines, fried calamari, Mykonian lamb chops. Dessert: portokalopita (orange pie).")}
     ],
     enlaces: [
       {titulo:B("Ferry oficial Mykonos ⇄ Delos (Delos Tours)","Official Mykonos ⇄ Delos ferry (Delos Tours)"), url:"https://www.delostours.gr/en/"},
@@ -1057,7 +1063,7 @@ function renderDest(key){
   }
   if(d.comida && d.comida.length){
     html += '<h2 class="sec">'+t(UI.secComer)+'</h2><div class="card">';
-    html += d.comida.map(c=>`<div class="atr"><div class="n">🥘</div><div><b>${esc(t(c.nombre))}</b><p>${esc(t(c.nota))}</p></div></div>`).join('');
+    html += d.comida.map(c=>`<div class="atr"><div class="n">🥘</div><div><b>${esc(t(c.nombre))}</b>${c.mapa?' · <a href="'+c.mapa+'" target="_blank" style="font-size:.75rem">'+t(UI.mapa)+'</a>':''}<p>${esc(t(c.nota))}</p></div></div>`).join('');
     html += '</div>';
   }
   if(d.djs){
